@@ -4,9 +4,45 @@ import Navbar from '../components/layout/Navbar';
 import Footer from '../components/layout/Footer';
 import PageHeader from '../components/common/PageHeader';
 import { Link } from 'react-router-dom';
-import { Shield, Network, Cloud, MonitorSmartphone, BadgeCheck, Clock, BookOpen } from 'lucide-react';
+import { Shield, Network, Cloud, MonitorSmartphone, BadgeCheck, Clock, BookOpen, Eye, Lock, Search } from 'lucide-react';
 
 const paths = [
+  {
+    id: "soc-analyst",
+    title: "SOC Analyst Path",
+    description: "Learn to effectively monitor, detect, and respond to security threats in real-time within a modern Security Operations Center.",
+    icon: Eye,
+    courses: [
+      "SOC Fundamentals",
+      "SIEM Implementation",
+      "Threat Detection Techniques",
+      "Incident Response Basics",
+    ],
+    duration: "4-6 months",
+    courseCount: 14,
+    totalHours: 85,
+    level: "Intermediate",
+    certifications: ["CompTIA CySA+", "EC-Council CSOC", "GIAC SOC Analyst"],
+    highlighted: true
+  },
+  {
+    id: "threat-hunter",
+    title: "Threat Hunter Path",
+    description: "Master the skills needed to proactively search for advanced threats that evade existing security solutions.",
+    icon: Search,
+    courses: [
+      "Advanced Threat Hunting",
+      "Threat Intelligence Analysis",
+      "Malware Analysis Fundamentals",
+      "Advanced Persistent Threats",
+    ],
+    duration: "5-7 months",
+    courseCount: 16,
+    totalHours: 95,
+    level: "Advanced",
+    certifications: ["SANS GIAC CTI", "Certified Threat Hunter", "MITRE ATT&CK"],
+    highlighted: true
+  },
   {
     id: "firewall-engineer",
     title: "Firewall Engineer Path",
@@ -40,6 +76,24 @@ const paths = [
     totalHours: 90,
     level: "Beginner to Advanced",
     certifications: ["CCNA", "CCNP Enterprise", "CCIE Enterprise Infrastructure"]
+  },
+  {
+    id: "incident-responder",
+    title: "Incident Responder Path",
+    description: "Develop expertise in responding to security breaches, containing threats, and recovering systems efficiently.",
+    icon: Lock,
+    courses: [
+      "Incident Response Frameworks",
+      "Digital Forensics",
+      "Malware Incident Handling",
+      "Crisis Communication"
+    ],
+    duration: "4-6 months",
+    courseCount: 13,
+    totalHours: 80,
+    level: "Intermediate to Advanced",
+    certifications: ["GIAC GCIH", "EC-Council ECIR", "CERT-Certified IR"],
+    highlighted: true
   },
   {
     id: "cloud-security",
@@ -84,10 +138,20 @@ const LearningPaths = () => {
       <PageHeader 
         title="Learning Paths" 
         subtitle="Structured training tracks to take you from beginner to expert"
+        showDefensiveBadge={true}
       />
       <main className="flex-grow py-12 bg-gray-50">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="mb-12">
+            <div className="flex items-center bg-gray-900 text-white p-6 rounded-lg mb-8">
+              <Shield className="h-10 w-10 text-atlas-gold mr-4" />
+              <div>
+                <h2 className="text-2xl font-bold mb-2">SOC & Defensive Security Focus</h2>
+                <p className="text-gray-300">
+                  Our learning paths are designed by security professionals from ATLAS DEFENDERS to ensure you master the latest defensive security techniques and SOC operations.
+                </p>
+              </div>
+            </div>
             <h2 className="text-2xl font-bold text-atlas-darkblue mb-4">Choose Your Career Path</h2>
             <p className="text-lg text-gray-700">
               Our learning paths are carefully structured programs that combine multiple courses to help you achieve specific career goals.
@@ -97,9 +161,14 @@ const LearningPaths = () => {
           
           <div className="grid grid-cols-1 gap-12">
             {paths.map((path, index) => (
-              <div key={path.id} className="bg-white rounded-xl shadow-md overflow-hidden">
+              <div key={path.id} className={`bg-white rounded-xl shadow-md overflow-hidden ${path.highlighted ? 'border-2 border-atlas-gold' : ''}`}>
                 <div className="grid grid-cols-1 lg:grid-cols-5">
-                  <div className="lg:col-span-2 bg-gradient-to-br from-atlas-blue to-atlas-darkblue p-8 flex flex-col justify-between">
+                  <div className={`lg:col-span-2 bg-gradient-to-br from-atlas-blue to-atlas-darkblue p-8 flex flex-col justify-between ${path.highlighted ? 'relative' : ''}`}>
+                    {path.highlighted && (
+                      <div className="absolute top-0 left-0 bg-atlas-gold text-atlas-darkblue px-4 py-1 text-sm font-bold">
+                        SOC DEFENDER FOCUS
+                      </div>
+                    )}
                     <div>
                       <div className="w-16 h-16 rounded-full bg-white bg-opacity-20 flex items-center justify-center mb-6">
                         <path.icon className="h-8 w-8 text-white" />
@@ -160,7 +229,7 @@ const LearningPaths = () => {
                           
                           <Link 
                             to={`/learning-paths/${path.id}`}
-                            className="btn-primary"
+                            className={`${path.highlighted ? 'bg-atlas-gold hover:bg-atlas-lightgold text-atlas-darkblue' : 'btn-primary'} py-2 px-4 rounded font-medium`}
                           >
                             View Path Details
                           </Link>

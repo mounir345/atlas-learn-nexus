@@ -1,7 +1,7 @@
 
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { Facebook, Twitter, Linkedin, Instagram, Youtube } from 'lucide-react';
+import { Facebook, Twitter, Linkedin, Instagram, Youtube, Shield } from 'lucide-react';
 
 const Footer = () => {
   return (
@@ -20,9 +20,12 @@ const Footer = () => {
             <p className="text-gray-300 mb-4">
               Your path to becoming a certified infrastructure & cybersecurity expert.
             </p>
-            <p className="text-gray-300 mb-4">
-              Powered by ATLAS DEFENDERS
-            </p>
+            <div className="flex items-center bg-atlas-gold bg-opacity-20 p-3 rounded-md mb-4 border-l-4 border-atlas-gold">
+              <Shield className="h-5 w-5 text-atlas-gold mr-2" />
+              <p className="text-atlas-gold font-semibold">
+                Powered by ATLAS DEFENDERS
+              </p>
+            </div>
             <div className="flex space-x-4">
               <a href="#" className="text-gray-300 hover:text-atlas-gold">
                 <Facebook className="h-5 w-5" />
