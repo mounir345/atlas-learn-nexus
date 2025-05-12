@@ -1,7 +1,7 @@
 
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
-import { UserPlus, Mail, Google, Microsoft } from 'lucide-react';
+import { UserPlus, Mail, GithubIcon, LinkedinIcon } from 'lucide-react';
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from "@/components/ui/card";
@@ -228,7 +228,7 @@ const Signup = () => {
                 disabled={isLoading}
                 className="w-full border-gray-300 hover:bg-gray-50 flex items-center justify-center gap-2"
               >
-                <Google className="h-4 w-4" />
+                <GithubIcon className="h-4 w-4" />
                 <span>Sign up with Google</span>
               </Button>
               
@@ -238,7 +238,7 @@ const Signup = () => {
                 disabled={isLoading}
                 className="w-full border-gray-300 hover:bg-gray-50 flex items-center justify-center gap-2"
               >
-                <Microsoft className="h-4 w-4" />
+                <LinkedinIcon className="h-4 w-4" />
                 <span>Sign up with Microsoft</span>
               </Button>
               
