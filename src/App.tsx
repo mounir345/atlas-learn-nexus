@@ -10,6 +10,8 @@ import LearningPaths from "./pages/LearningPaths";
 import Certifications from "./pages/Certifications";
 import Labs from "./pages/Labs";
 import Pricing from "./pages/Pricing";
+import Login from "./pages/Login";
+import Signup from "./pages/Signup";
 import NotFound from "./pages/NotFound";
 
 const queryClient = new QueryClient();
@@ -27,6 +29,8 @@ const App = () => (
           <Route path="/certifications" element={<Certifications />} />
           <Route path="/labs" element={<Labs />} />
           <Route path="/pricing" element={<Pricing />} />
+          <Route path="/login" element={<Login />} />
+          <Route path="/signup" element={<Signup />} />
           <Route path="*" element={<NotFound />} />
         </Routes>
       </BrowserRouter>

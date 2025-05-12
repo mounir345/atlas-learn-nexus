@@ -2,6 +2,7 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import { Menu, X, Search, ChevronDown } from 'lucide-react';
+import { Button } from '@/components/ui/button';
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -55,15 +56,19 @@ const Navbar = () => {
               </Link>
             </div>
             
-            <div className="flex items-center space-x-2">
+            <div className="flex items-center space-x-4">
               <button className="p-2 rounded-full hover:bg-gray-100 transition-colors">
                 <Search className="h-5 w-5 text-atlas-blue" />
               </button>
-              <Link to="/login" className="text-atlas-blue hover:text-atlas-gold font-medium transition-colors">
-                Login
+              <Link to="/login">
+                <Button variant="outline" className="border-atlas-blue text-atlas-blue hover:bg-atlas-blue hover:text-white transition-all duration-300">
+                  Login
+                </Button>
               </Link>
-              <Link to="/signup" className="btn-primary">
-                Start Free Trial
+              <Link to="/signup">
+                <Button className="bg-atlas-blue text-white hover:bg-atlas-darkblue transition-all shadow-md hover:shadow-lg duration-300">
+                  Start Free Trial
+                </Button>
               </Link>
             </div>
           </div>
@@ -124,14 +129,14 @@ const Navbar = () => {
             </Link>
             <Link 
               to="/login" 
-              className="block px-3 py-2 text-base font-medium text-atlas-blue hover:bg-gray-100 rounded-md"
+              className="block px-3 py-2 text-base font-medium text-white bg-atlas-blue hover:bg-atlas-darkblue rounded-md"
               onClick={() => setIsOpen(false)}
             >
               Login
             </Link>
             <Link 
               to="/signup" 
-              className="block px-3 py-2 text-base font-medium bg-atlas-blue text-white hover:bg-atlas-darkblue rounded-md"
+              className="block px-3 py-2 text-base font-medium bg-atlas-gold text-atlas-darkblue hover:bg-atlas-lightgold rounded-md"
               onClick={() => setIsOpen(false)}
             >
               Start Free Trial
