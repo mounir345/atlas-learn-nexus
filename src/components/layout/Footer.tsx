@@ -5,7 +5,7 @@ import { Facebook, Twitter, Linkedin, Instagram, Youtube, Shield } from 'lucide-
 
 const Footer = () => {
   return (
-    <footer className="bg-atlas-darkblue text-white pt-16 pb-8">
+    <footer className="bg-atlas-cyberdark text-white pt-16 pb-8">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
           <div>
@@ -20,7 +20,7 @@ const Footer = () => {
             <p className="text-gray-300 mb-4">
               Your path to becoming a certified infrastructure & cybersecurity expert.
             </p>
-            <div className="flex items-center bg-atlas-gold bg-opacity-20 p-3 rounded-md mb-4 border-l-4 border-atlas-gold">
+            <div className="flex items-center bg-atlas-cyberblue/30 p-3 rounded-md mb-4 border-l-4 border-atlas-gold cyber-glow">
               <Shield className="h-5 w-5 text-atlas-gold mr-2" />
               <p className="text-atlas-gold font-semibold">
                 Powered by ATLAS DEFENDERS
@@ -79,7 +79,7 @@ const Footer = () => {
           </div>
         </div>
         
-        <div className="mt-12 pt-8 border-t border-gray-700">
+        <div className="mt-12 pt-8 border-t border-atlas-blue/30">
           <div className="flex flex-col md:flex-row justify-between">
             <p className="text-gray-400 text-sm mb-4 md:mb-0">
               &copy; {new Date().getFullYear()} ATLAS LEARN. All rights reserved.

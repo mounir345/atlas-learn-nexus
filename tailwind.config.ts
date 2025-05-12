@@ -28,7 +28,9 @@ export default {
         atlas: {
           blue: "#20639B",
           gold: "#F0AD4E",
-          darkblue: "#0F4C81",
+          darkblue: "#0F2D52",       // Darkened for more cyber feel
+          cyberdark: "#071833",      // Very dark blue, almost black
+          cyberblue: "#1A4B8C",      // Deep blue for cyber theme
           lightgold: "#F8C471",
           gray: "#f5f5f7",
           darkgray: "#333333",

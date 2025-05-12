@@ -101,11 +101,11 @@
   }
   
   .btn-primary {
-    @apply bg-atlas-blue hover:bg-atlas-darkblue text-white font-semibold py-3 px-6 rounded-md transition-all;
+    @apply bg-atlas-cyberblue hover:bg-atlas-darkblue text-white font-semibold py-3 px-6 rounded-md transition-all;
   }
   
   .btn-secondary {
-    @apply bg-atlas-gold hover:bg-atlas-lightgold text-atlas-darkblue font-semibold py-3 px-6 rounded-md transition-all;
+    @apply bg-atlas-gold hover:bg-atlas-lightgold text-atlas-cyberdark font-semibold py-3 px-6 rounded-md transition-all;
   }
   
   .card {
@@ -126,5 +126,18 @@
   
   .heading-3 {
     @apply text-2xl sm:text-3xl font-bold text-atlas-darkblue;
+  }
+  
+  /* Cyber-themed elements */
+  .cyber-card {
+    @apply bg-atlas-cyberdark text-white rounded-xl border border-atlas-blue/30 shadow-md overflow-hidden transition-all hover:shadow-[0_0_15px_rgba(32,99,155,0.5)];
+  }
+  
+  .cyber-gradient {
+    @apply bg-gradient-to-br from-atlas-cyberdark via-atlas-darkblue to-atlas-cyberblue;
+  }
+  
+  .cyber-glow {
+    @apply shadow-[0_0_10px_rgba(32,99,155,0.7)];
   }
 }
